@@ -1,0 +1,25 @@
+{
+    "file": "bmi_calculator",
+    "location": "example/",
+    "class": "BMICalc",
+    "constructor": {
+        "parameters": [
+            { "type": "integer", "min": -1 },
+            { "type": "integer", "min": -1 },
+            { "type": "integer", "min": -1, "max": 150 }
+        ] },
+    "actions": [
+        { "name": "height", "type": "assign", "parameters": [
+            { "type": "integer", "min": -1 } ]
+        },
+        { "name": "weight", "type": "assign", "parameters": [
+            { "type": "integer", "min": -1 } ]
+        },
+        { "name": "age", "type": "assign", "parameters": [
+            { "type": "integer", "min": -1, "max": 150 } ]
+        },
+        { "name": "bmi_value", "type": "method" },
+        { "name": "classify_bmi_teens_and_children", "type": "method" },
+        { "name": "classify_bmi_adults", "type": "method" }
+    ]
+}
