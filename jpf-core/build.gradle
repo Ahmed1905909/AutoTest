@@ -25,7 +25,10 @@ dependencies {
 }
 
 task copyLibs(type: Copy) {
-    from configurations.testImplementation
+    from configurations.testImplementation {
+        canBeResolved true
+
+    }
     into 'build'
 }
 
