@@ -1,0 +1,7 @@
+target=app
+symbolic.method=app.sum
+classpath=trialjpf\\bin
+jpf-symbc.target=app
+jpf.report.console.show=true
+symbolic.min_int=1
+symbolic.max_int=1000
