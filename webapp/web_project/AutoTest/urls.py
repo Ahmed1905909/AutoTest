@@ -6,7 +6,7 @@ from django.contrib import admin
 from django.urls import include, path
 urlpatterns = [
     path('AutoTest/', views.AutoTest, name='AutoTest'),
-    path('generate_test_cases/', views.generate_test_cases, name='generate_test_cases'),
+    path('generate/', views.generate_test_cases, name='generate_test_cases'),
 
 ]
 
