@@ -20,3 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('AutoTest.urls')),
 ]
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('generate_test_cases.urls')),
+]
