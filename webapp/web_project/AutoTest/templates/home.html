@@ -45,7 +45,48 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   
 <!-- !PAGE CONTENT! -->
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>NLP Cloud API Demo</title>
+  </head>
+  <body>
+      <h1>Generate Code</h1>
+      <form id="generate-code-form">
+          <label for="text">Enter text:</label>
+          <input type="text" id="text" name="text">
+          <input type="submit" value="Generate">
+      </form>
+      <br>
+      <h2>Generated Code:</h2>
+      <div id="generated-code"></div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+          $(document).ready(function() {
+              $('#generate-code-form').submit(function(event) {
+                  event.preventDefault();
+                  var text = $('#text').val();
+                  $.ajax({
+                      type: 'POST',
+                      url: '/generate-code/',
+                      data: {
+                          'text': text,
+                          'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+                      },
+                      dataType: 'json',
+                      success: function(response) {
+                          $('#generated-code').html(response.generated_code);
+                      },
+                      error: function(response) {
+                          console.log('Error:', response);
+                      }
+                  });
+              });
+          });
+      </script>
+  </body>
+  </html>
+  
  
   
   
