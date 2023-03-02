@@ -9,12 +9,10 @@ urlpatterns = [
 
 urlpatterns += staticfiles_urlpatterns()
 
-urlpatterns = [
-    path('generate-code/', views.generate_code, name='generate_code'),
-]
 
 
-urlpatterns = [
-    path('', include('myapp.urls')),
-    path('admin/', admin.site.urls),
-]
+
+#urlpatterns = [
+   # path('', include('web_project.urls')),
+   # path('admin/', admin.site.urls),
+#]

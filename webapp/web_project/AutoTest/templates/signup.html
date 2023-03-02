@@ -1,84 +1,96 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
-
-body{
-  background: #fff;
-  font-family: 'PT Sans', sans-serif;
-}
-h2{
-  padding-top: 1.5rem;
-}
-a{
-  color: #333;
-}
-a:hover{
-  color: #da5767;
-  text-decoration: none;
-}
-.card{
-  border: 0.40rem solid #f8f9fa;
-  top: 10%;
-}
-.form-control{
-  background-color: #f8f9fa;
-  padding: 20px;
-  padding: 25px 15px;
-  margin-bottom: 1.3rem;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
 }
 
-.form-control:focus {
-
-    color: #000000;
-    background-color: #ffffff;
-    border: 3px solid #da5767;
-    outline: 0;
-    box-shadow: none;
-
+* {
+  box-sizing: border-box;
 }
 
-.btn{
-  padding: 0.6rem 1.2rem;
-  background: #da5767;
-  border: 2px solid #da5767;
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
 }
-.btn-primary:hover {
 
-    
-    background-color: #df8c96;
-    border-color: #df8c96;
-  transition: .3s;
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
 
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
 }
 </style>
+</head>
 <body>
 
-<form action="/action_page.php" style="border:1px solid #ccc">
+<form action="/action_page.php">
   <div class="container">
-    <h1>Sign Up</h1>
+    <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-    
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-    
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <hr>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
-    </div>
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 </form>
 
