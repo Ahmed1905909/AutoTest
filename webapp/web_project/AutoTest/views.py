@@ -8,6 +8,8 @@ import nlpcloud
 def AutoTest(request):
     template = loader.get_template('userpag.html')
     return HttpResponse(template.render())
+
+
 def generate_test_cases(request):
     if request.method == 'POST':
         prompt = request.POST['prompt']
