@@ -1,0 +1,21 @@
+{
+    "file": "Temp_calculator",
+    "location": "example/",
+    "class": "Login",
+    "constructor": {
+        "parameters": [
+            { "type": "string", "min": 2,"max": 10 },
+            { "type": "string", "min": 2 ,"max": 10 }
+             ] },
+    "actions": [
+        { "name": "email", "type": "assign", "parameters": [
+            { "type": "string", "min": 2 ,"max": 10 }]
+        },
+        { "name": "password", "type": "assign", "parameters": [
+            { "type": "string", "min": 2,"max": 10 } ]
+        },
+        { "name": "email_value", "type": "method" },
+        { "name": "password_value", "type": "method" }
+    ]
+
+}
