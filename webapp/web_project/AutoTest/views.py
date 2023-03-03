@@ -6,9 +6,10 @@ from django.template import loader
 import nlpcloud
 
 def AutoTest(request):
-    template = loader.get_template('userpag.html')
+    template = loader.get_template('home.html')
     return HttpResponse(template.render())
-
+def signin_view(request):
+    return render(request, 'signin.html')
 
 def generate_test_cases(request):
     if request.method == 'POST':

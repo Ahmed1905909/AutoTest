@@ -67,12 +67,13 @@ span.psw {
 </style>
 </head>
 <body>
-
+  <div class="container">
 <h2>Login Form</h2>
 
-<form action="/action_page.php" method="post">
+<form method="post">
   <div class="imgcontainer">
     {% load static %}
+    {% csrf_token %}
     <img src="{% static 'webapp\web_project\AutoTest\static\web_project\images\Ce.JPG' %}" ">
   </div>
 
@@ -94,6 +95,7 @@ span.psw {
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
+  </div>
 
 </body>
 </html>
