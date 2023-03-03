@@ -4,10 +4,8 @@ from django.template import loader
 
 
 import nlpcloud
-
-def AutoTest(request):
-    template = loader.get_template('home.html')
-    return HttpResponse(template.render())
+def home(request):
+    return render(request, 'home.html')
 def signin_view(request):
     return render(request, 'signin.html')
 
