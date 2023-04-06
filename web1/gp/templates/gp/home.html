@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Code Generation Example</title>
+  </head>
+  {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/random.css' %}">
+  <body>
+    <h1>AHHHHHHHHHHHHHHHHHHHHHHHH</h1>
+    {% if error_message %}
+      <p>{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+      {% csrf_token %}
+      <label for="input_text">Input Text:</label><br>
+      <textarea name="input_text" id="input_text" rows="10" cols="50">{% if input_text %}{{ input_text }}{% endif %}</textarea><br>
+      <input type="submit" value="Generate Code">
+    </form>
+    {% if generated_code %}
+      <label for="generated_code">Generated Code:</label><br>
+      <textarea id="generated_code" rows="10" cols="50" readonly>{{ generated_code }}</textarea>
+    {% endif %}
+  </body>
+</html>
