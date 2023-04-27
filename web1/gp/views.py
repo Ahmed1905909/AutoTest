@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
+
 import nlpcloud
 from requests import HTTPError
 import subprocess
+import openai
+openai.api_key = "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"
 
 def home(request):
     if request.method == 'POST':
@@ -35,4 +39,32 @@ def handle_file_upload(request):
 
     # Return the output as a response
     return HttpResponse(output)
+def index(request):
+    return render(request, 'gp/index.html')
+def login(request):
+    return render(request, 'gp/logIn.html')
+def siginup(request):
+    return render(request, 'gp/siginUp.html')
+def lm(request):
+    return render(request, 'gp/learnMore.html')
+def chat(request):
+    context = {}
 
+    if request.method == "POST":
+        function_input = request.POST.get("function_input")
+        if function_input:
+            prompt = f"you are a world class test case generator generate test cases for the following function: {function_input}"
+
+            response = openai.Completion.create(
+                engine="text-davinci-002",
+                prompt=prompt,
+                temperature=0.5,
+                max_tokens=100
+            )
+
+            test_cases = response.choices[0].text
+
+            context["function_input"] = function_input
+            context["test_cases"] = test_cases
+
+    return render(request, "gp/chat.html", context=context)

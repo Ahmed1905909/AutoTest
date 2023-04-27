@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPT-3.5-Turbo Model Chat</title>
+</head>
+<body>
+    <h1>GPT-3.5-Turbo Model Chat</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="function_input">Enter your function:</label>
+        <input type="text" name="function_input" id="function_input"><br>
+        <input type="submit" value="Generate">
+    </form>
+    {% if function_input %}
+        <h2>Generated test cases for "{{ function_input }}":</h2>
+        <textarea rows="10" cols="50" readonly>{{ generated_test_cases }}</textarea>
+    {% endif %}
+</body>
+</html>

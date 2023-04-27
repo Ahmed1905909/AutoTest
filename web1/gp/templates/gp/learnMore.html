@@ -1,0 +1,42 @@
+{% extends 'gp/navbar.html' %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/learnMore.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>Our Features</h1>
+        <div class="row">
+            <div class="service">
+                <i class="fa-solid fa-file-code" style="color: #009688; font-size: 80px;"></i>
+                <h2>Input</h2>
+                <p>The user can choose the input type whether to upload java or python source code OR to write their own test scenario</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-code" style="color: #009688;font-size: 80px;"></i>
+                <h2>Test Cases</h2>
+                <p>AutoTest will generate reliable unit test cases from the user input</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-bug" style="color: #009688;font-size: 80px;"></i>
+                <h2>Testing</h2>
+                <p>AutoTest will run the test cases on the user input and give the user the test results</p>
+            </div>
+            <div class="service">
+                <i class=" fa-solid fa-list-check" style="color: #009688;font-size: 80px;"></i>
+                <h2>Report</h2>
+                <p>AutoTest will give the user a report with the test cases status after testing</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-clock-rotate-left" style="color: #009688;font-size: 80px;"></i>
+                <h2>History</h2>
+                <p>The user can check previous tests through his History only if the user has an account on AutoTest</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
