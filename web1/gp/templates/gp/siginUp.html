@@ -12,12 +12,14 @@
 <div class="container">
     <input type="checkbox" id="check">
     <div class="login form">
-        <header>Signup </header>
-        <form action="#">
-          <input type="text" placeholder="Enter your email">
-          <input type="password" placeholder="Create a password">
-          <input type="password" placeholder="Confirm your password">
-          <input type="button" class="button" value="Signup">
+        <header>Sign Up </header>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.email.lable}}
+            {{form.username.lable}}
+            {{form.password1}}
+            {{form.password2}}
+            <input type="submit" class="button" value="Sign Up">
         </form>
         <div class="signup">
           <span class="signup">Already have an account?
