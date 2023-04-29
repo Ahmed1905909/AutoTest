@@ -15,8 +15,8 @@
         <header>Sign Up </header>
         <form method="POST" action="">
             {% csrf_token %}
-            {{form.email.lable}}
-            {{form.username.lable}}
+            {{form.email}}
+            {{form.username}}
             {{form.password1}}
             {{form.password2}}
             <input type="submit" class="button" value="Sign Up">
