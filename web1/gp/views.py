@@ -8,6 +8,7 @@ from requests import HTTPError
 import subprocess
 import openai
 import jpype
+from my_module import genetic_algorithm
 from jpype import * 
 openai.api_key = "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"
 
@@ -123,7 +124,7 @@ def upload(request):
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
         
-        #result = my_module.my_function(name, file1, file2)
+        result = genetic_algorithm.crossover()
         
         #return HttpResponse(result)
     
