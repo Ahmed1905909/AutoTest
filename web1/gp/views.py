@@ -43,7 +43,7 @@ def handle_file_upload(request):
 def index(request):
     return render(request, 'gp/index.html')
 def login(request):
-    return render(request, 'users/logIn.html')
+    return render(request, 'users/LogIn.html')
 def siginup(request):    
     return render(request, 'users/register.html')
 def lm(request):
