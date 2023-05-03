@@ -16,7 +16,6 @@
         <form method="POST" action="">
             {% csrf_token %}
             {{form.email}}
-            {{form.username}}
             {{form.password1}}
             {{form.password2}}
             <input type="submit" class="button" value="Sign Up">

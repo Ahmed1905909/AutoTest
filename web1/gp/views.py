@@ -9,7 +9,7 @@ import subprocess
 import openai
 import jpype
 from my_module import genetic_algorithm
-from jpype import * 
+from jpype import *
 openai.api_key = "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"
 
 
@@ -17,17 +17,13 @@ openai.api_key = "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"
 def index(request):
     return render(request, 'gp/index.html')
 def login(request):
-    return render(request, 'gp/logIn.html')
+    return render(request, 'users/LogIn.html')
 def siginup(request):
-    form = CreateUserForm()
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-    context = {'form':form}        
-    return render(request, 'gp/siginUp.html', context)
+    return render(request, 'users/register.html')
 def lm(request):
     return render(request, 'gp/learnMore.html')
+def up(request):
+    return render(request, 'gp/peofile.html')
 def chat(request):
     context = {}
 
@@ -62,13 +58,13 @@ def java_view(request):
 
         # Call the Java function using subprocess
         process = subprocess.Popen(['java', 'MyJavaClass', input_value],
-                                   stdout=subprocess.PIPE, 
+                                   stdout=subprocess.PIPE,
                                    stderr=subprocess.PIPE)
         stdout, stderr = process.communicate()
-        
+
         # Process the output of the Java function
         output = stdout.decode('utf-8')
-        
+
         # Render the output in the template
         return render(request, 'output.html', {'output': output})
 
@@ -103,7 +99,7 @@ def call_java_method(request):
     jpype.shutdownJVM()
     # create a Pype interface for the Java class that contains the method you want to call
     # java_class = jpype.JClass("FunctionExtractor.java")
-    
+
 
     # # create an instance of the Java class
     # java_instance = java_class()
@@ -115,7 +111,7 @@ def call_java_method(request):
     return render(request, 'gp/output.html')
     #return HttpResponse(result)
 
-    
+
 
 
 def upload(request):
@@ -123,11 +119,9 @@ def upload(request):
         name = request.POST['name']
         file1 = request.FILES['file1']
         file2 = request.FILES['file2']
-        
-        result = genetic_algorithm.crossover()
-        
-        #return HttpResponse(result)
-    
-    return render(request, 'gp/genetic.html')
 
-    
+        result = genetic_algorithm.crossover()
+
+        #return HttpResponse(result)
+
+    return render(request, 'gp/genetic.html')
