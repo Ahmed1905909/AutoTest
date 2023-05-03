@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
-from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
+
 
 import nlpcloud
 from requests import HTTPError
@@ -44,17 +43,13 @@ def handle_file_upload(request):
 def index(request):
     return render(request, 'gp/index.html')
 def login(request):
-    return render(request, 'gp/logIn.html')
-def siginup(request):
-    form = CreateUserForm()
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-    context = {'form':form}        
-    return render(request, 'gp/siginUp.html', context)
+    return render(request, 'users/logIn.html')
+def siginup(request):    
+    return render(request, 'users/register.html')
 def lm(request):
     return render(request, 'gp/learnMore.html')
+def up(request):
+    return render(request, 'gp/peofile.html')
 def chat(request):
     context = {}
 

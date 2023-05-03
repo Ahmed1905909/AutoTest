@@ -1,0 +1,49 @@
+
+{% extends 'gp/navbar.html' %}
+{% block head %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/userp.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="about-us1">
+    <div class="about">
+      <img src="{% static '/images/jlogo.png' %}"  class="pic">
+      <div class="text">
+        <h4>Test your JAVA file</h4>
+          <p>You can upload a java file to Auto Test to be tested using junit testing framwork </p>
+        <div class="data">
+        <a href="#" class="hire">Start Testing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about-us2">
+    <div class="about">
+        <img src="{% static '/images/Py.png' %}"  class="pic">
+      <div class="text">
+        <h4>Test your Python file</h4>
+          <p>You can upload a python file to Auto Test to be tested using pytest testing framwork</p>
+        <div class="data">
+        <a href="#" class="hire">Start Testing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about-us3">
+    <div class="about">
+      <!--<img src="girl.png" class="pic">-->
+      <div class="text">
+        <h4>write you own code </h4>
+          <p>ou can write any code with any language and choose the testing framwork you want</p>
+        <div class="data">
+        <a href="#" class="hire">Start Testing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+

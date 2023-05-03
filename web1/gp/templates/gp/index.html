@@ -12,10 +12,15 @@
 <div class="banner">
     <div class="container">
         <div class="content" >
-            <h1>Code Testing</h1>
-            <p>Testing the code</p>
+          
+            <img src="{% static '/images/homep.png' %}"style="width: 100%; height: 100%;" class="shadow">
+            
             <div>
-                <button type="button"><span></span>START TESTING</button>
+                <a href="{% url 'up' %}">
+                    <button type="button">
+                      <span></span>START TESTING
+                    </button>
+                  </a>
                 <a href="{% url 'lm' %}">
                   <button type="button">
                     <span></span>LEARN MORE
