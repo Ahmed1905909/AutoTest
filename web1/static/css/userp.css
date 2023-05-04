@@ -8,8 +8,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    max-width: 730px;
+    transform: translate(60%,-50%);
+    max-width: 400px;
     width: 100%;
     padding: 90px 0;
     background: #ddd;
@@ -18,10 +18,10 @@
   }
   .about-us2{
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,50%);
-    max-width: 730px;
+    transform: translate(-50%,-50%);
+    max-width: 400px;
     width: 100%;
     padding: 90px 0;
     background: #ddd;
@@ -30,10 +30,10 @@
   }
   .about-us3{
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,150%);
-    max-width: 730px;
+    transform: translate(-160%,-50%);
+    max-width: 400px;
     width: 100%;
     padding: 90px 0;
     background: #ddd;
@@ -43,6 +43,10 @@
   
   .pic{
     height: 80%;
+    width:  10%;
+  }
+  .pic2{
+    height: 50%;
     width:  10%;
   }
   .about{

@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.urls import reverse
 from.forms import CreateUserForm
 from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponseRedirect
 
 
 
@@ -17,19 +18,20 @@ def register(request):
             return redirect('login')
     else:
         form = CreateUserForm()
-    return render(request, 'signup', {'form': form})
+    return render(request, 'users/register.html', {'form': form})
 
 
 def login(request):
     if request.method == 'POST':
+        print('Form submitted as POST request')
         username = request.POST['username']
-        password =request.POST['password']
+        password = request.POST['password1']
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect(reverse('index'))
+            return HttpResponseRedirect('gp/index.html')
         else:
-            messages.info(request, 'Username OR password is incorrect')
-    return render(request,'login',{})
-
-
+         
+            return redirect('login')
+    else:
+        return render(request, 'users/logIn.html')

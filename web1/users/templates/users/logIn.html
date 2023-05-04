@@ -17,15 +17,15 @@
     <input type="checkbox" id="check">
     <div class="login form">
       <header>Login</header>
-        <form method="POST" action="">
+        <form method="POST" >
           {% csrf_token %}
         <label for="username">Username:</label>
         <input type="text" name="username" required>
         <br>
-        <label for="password">Password:</label>
+        <label for="password1">Password:</label>
         <input type="password" name="password" required>
         <br>
-        <input type="submit" class="button" value="login" ;onclick="location.href='{% url 'index' %}'">
+        <input type="submit" class="button" value="login">
     </form>
       <div class="signup">
         <span class="signup">Don't have an account?
