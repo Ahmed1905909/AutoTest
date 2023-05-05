@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d6d1503-f412-4495-81ff-49d422a00a4b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../gp/templates/gp/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gp/templates/gp/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gp/templates/gp/genetic.html" beforeDir="false" afterPath="$PROJECT_DIR$/../gp/templates/gp/genetic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../gp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../gp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/example/Metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/example/class_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/example/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/example/test_automated_statement.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/example/test_class_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/example/test_manual.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/file_utilities.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/fitness_functions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/generation_utilities.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_module/genetic_algorithm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../web1/settings.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PI7CY8qHzVbiiqliJ7QHZYOM4F" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Ahmad/OneDrive/Documents/GitHub/AutoTest/web1/hope",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="FunctionExtractor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.FunctionExtractor" />
+      <module name="hope" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FunctionExtractor" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d6d1503-f412-4495-81ff-49d422a00a4b" name="Changes" comment="" />
+      <created>1683132615567</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683132615567</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
