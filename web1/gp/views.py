@@ -42,14 +42,16 @@ def handle_file_upload(request):
     return HttpResponse(output)
 def index(request):
     return render(request, 'gp/index.html')
-def login(request):
+def logino(request):
     return render(request, 'users/LogIn.html')
 def siginup(request):    
     return render(request, 'users/register.html')
 def lm(request):
     return render(request, 'gp/learnMore.html')
-def up(request):
+def userpage(request):
     return render(request, 'gp/peofile.html')
+def history(request):
+    return render(request, 'gp/history.html')
 def chat(request):
     context = {}
 

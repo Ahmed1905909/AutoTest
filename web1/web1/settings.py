@@ -135,3 +135,4 @@ DJANGO_ICONS = {
 
     },
 }
+LOGOUT_REDIRECT_URL = 'gp-index'
