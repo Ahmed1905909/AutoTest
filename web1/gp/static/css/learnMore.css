@@ -27,6 +27,24 @@
     transform: translateX(-50%);
    
 }
+.container h4{
+    text-align: center;
+    padding-top: 10%;
+    margin-bottom: 60px;
+    font-weight: 600;
+    position: relative;
+ }
+ .container h4::after{
+     content: "";
+     background: #009688;
+     width: 100px;
+     height: 5px;
+     position: absolute;
+     bottom: -5px;
+     left: 50%;
+     transform: translateX(-50%);
+    
+ }
 .row{
     display: grid;
     grid-template-columns :repeat(3, 1fr);

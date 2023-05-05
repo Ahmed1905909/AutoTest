@@ -35,9 +35,12 @@
     <h1>GPT-3.5-Turbo Model Chat</h1>
     <form method="post">
         {% csrf_token %}
+        <div style="text-align:center;">
         <label for="function_input">Enter your function:</label>
         <input type="text" name="function_input" id="function_input"><br>
         <input type="submit" class="hire" value="Generate">
+    </div>
+        
     </form>
     {% if function_input %}
         <h2>Generated test cases for "{{ function_input }}":</h2>
