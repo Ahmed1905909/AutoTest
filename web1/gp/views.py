@@ -7,23 +7,8 @@ import nlpcloud
 from requests import HTTPError
 import subprocess
 import openai
-openai.api_key = "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"
+openai.api_key = ""
 
-def home(request):
-    if request.method == 'POST':
-        input_text = request.POST['input_text']
-        client = nlpcloud.Client("fast-gpt-j", "d41a09a6328bc4b5d21f34854efea91004d2cd3d", gpu=True)
-        try:
-            generated_code = client.code_generation(input_text)
-        except HTTPError as e:
-            if e.response.status_code == 429:
-                error_message = "Error: Too many requests. Please try again later or contact support."
-            else:
-                error_message = "Error: {}".format(e)
-            return render(request, 'gp/home.html', {'error_message': error_message, 'input_text': input_text})
-        return render(request, 'gp/home.html', {'generated_code': generated_code, 'input_text': input_text})
-    else:
-        return render(request, 'gp/home.html')
 
 def handle_file_upload(request):
     # Handle the file upload using Django's built-in functionality
@@ -55,8 +40,9 @@ def chat(request):
 
     if request.method == "POST":
         function_input = request.POST.get("function_input")
+        language = request.POST.get("language")
         if function_input:
-            prompt = f"you are a world class test case generator generate test cases for the following function: {function_input}"
+            prompt = f"you are a world class test case generator generate test cases for the following {language}function: {function_input}"
 
             response = openai.Completion.create(
                 engine="text-davinci-002",
@@ -69,5 +55,6 @@ def chat(request):
 
             context["function_input"] = function_input
             context["test_cases"] = test_cases
+            context["language"]=language
 
     return render(request, "gp/chat.html", context=context)
