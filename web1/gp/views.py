@@ -7,7 +7,7 @@ import nlpcloud
 from requests import HTTPError
 import subprocess
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 
 def home(request):
     if request.method == 'POST':
