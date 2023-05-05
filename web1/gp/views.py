@@ -1,16 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
-from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
-import nlpcloud
 from requests import HTTPError
 import subprocess
 import openai
 import jpype
-from my_module import genetic_algorithm
+import json
+import os
+from .test_suite_mang.test_suite_manger import run_test_suite
+#from my_module import genetic_algorithm
 from jpype import *
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 
@@ -119,11 +119,35 @@ def call_java_method(request):
 def upload(request):
     if request.method == 'POST':
         name = request.POST['name']
-        file1 = request.FILES['file1']
+        Jason = request.POST['Json']
         file2 = request.FILES['file2']
+        file_path = os.path.join(os.getcwd(), 'uploads', file2.name)
+        with open(file_path, 'wb') as destination_file:
+            for chunk in file2.chunks():
+                destination_file.write(chunk)
+        # TODO: Optionally do some processing on the file contents here
 
-        result = genetic_algorithm.crossover()
+        result = run_test_suite(name, json.loads(Jason) , None)
 
-        #return HttpResponse(result)
+        return render(request, 'gp/'+result)
 
     return render(request, 'gp/genetic.html')
+
+
+def run_java_program(request):
+    # Path to the Java program
+    java_program = "D:\\Grad2.0\\finalfinal\\out\\production\\finalfinal\\"
+
+    # Arguments to be passed to the Java program
+    arguments = "arg1"
+
+    # Call the Java program using subprocess
+    result = subprocess.run(["java", "FunctionExtractor",java_program,arguments] , stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    # Check if the Java program executed successfully
+    if result.returncode == 0:
+        # If successful, return the output
+        return HttpResponse(result.stdout)
+    else:
+        # If there was an error, return the error message
+        return HttpResponse(result.stderr)

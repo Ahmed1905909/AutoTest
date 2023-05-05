@@ -13,6 +13,8 @@
     <div class="about">
         <form method="post">
             {% csrf_token %}
+            <label for="function_input">Enter your language:</label>
+            <input type="text" name="function_input" id="language"><br>
             <label for="function_input">Enter your function:</label>
             <input type="text" name="function_input" id="function_input"><br>
             <input type="submit" value="Generate">
