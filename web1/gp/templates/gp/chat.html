@@ -1,63 +1,36 @@
-
-{% extends 'gp/navbar.html' %}
-{% block head %}
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/chat.css' %}">
-{% endblock %}
-
-{% block content %}
-<section class="about-us1">
-    <div class="about">
-        <form method="post">
-            {% csrf_token %}
-            <div style="text-align:center;">
-                <br>
-            
-                
-            <h4><label for="function_input">Enter your function:</label></h4>
-            <br>
-            
-            
-            <div class="felnos">
-                <input type="textarea" name="function_input" id="function_input">
-              </div>
-
-            <br>
-            
-            <input type="submit" value="Generate" class="hire">
-        </div>
-        </form>
-        {% if function_input %}
-            <h2>Generated test cases for "{{ function_input }}":</h2>
-            <textarea rows="10" cols="50" readonly>{{ generated_test_cases }}</textarea>
-        {% endif %}
-    </div>
-  </section>
-{% endblock %}
-
 <!DOCTYPE html>
 <html>
-<head>
-   
-    <title>GPT-3.5-Turbo Model Chat</title>
-</head>
-<body>
-    <h1>GPT-3.5-Turbo Model Chat</h1>
-    <form method="post">
-        {% csrf_token %}
-        <div style="text-align:center;">
-        <label for="function_input">Enter your function:</label>
-        <input type="text" name="function_input" id="function_input"><br>
-        <input type="submit" class="hire" value="Generate">
+    {% extends 'gp/navbar.html' %}
+    {% block head %}
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/chat.css' %}">
+    {% endblock %}
+    {% block content %}
+    <div class="container">
+        <div class="input-container">
+            <form method="post">
+                {% csrf_token %}
+                <div style="text-align:center;">
+                    <br>
+                   
+                    <h2>Enter your function</h2>
+                    <textarea id="function_input" name="function_input">{{ function_input }}</textarea>
+                    <button type="submit">Generate</button>
+                </div>
+            </form>
+        </div>
+        {% if function_input %}
+
+        <div class="output-container">
+            <div style="text-align:center;">
+            <h2>Generated Test Cases</h2>
+            <pre id="output-text"></pre>
+            <textarea readonly>{{ test_cases }}</textarea>
+        </div>
+        {% endif %}
     </div>
-        
-    </form>
-    {% if function_input %}
-        <h2>Generated test cases for "{{ function_input }}":</h2>
-        <textarea rows="10" cols="50" readonly>{{ generated_test_cases }}</textarea>
-    {% endif %}
-</body>
+    {% endblock %}
 </html>
