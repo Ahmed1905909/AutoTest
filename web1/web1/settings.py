@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #'fontawesomefree',
     'users.apps.UsersConfig',
-    #'crispy_forms',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -80,9 +80,13 @@ WSGI_APPLICATION = 'web1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'auto_test',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',   
+        'PORT': '3306',
+    }    
 }
 
 
@@ -136,3 +140,4 @@ DJANGO_ICONS = {
     },
 }
 LOGOUT_REDIRECT_URL = 'gp-index'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

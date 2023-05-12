@@ -1,19 +1,26 @@
+	{% extends 'gp/navbar.html' %}
 <!DOCTYPE html>
 <html>
 <head>
+	{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/loginSignup.css' %}">
 	<title>Upload Files</title>
 </head>
 <body>
+<br>
+<br>	
+	{% block content %}
 	<h1>Upload Files</h1>
 	<form method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		<label for="name">Name:</label>
 		<input type="text" name="name"><br><br>
-		<label for="Json">Name:</label>
+		<label for="Json">Json:</label>
 		<input type="text" name="Json"><br><br>
 		<label for="file2">File 2:</label>
 		<input type="file" name="file2"><br><br>
 		<input type="submit" value="Upload and Run">
 	</form>
+	{% endblock %}
 </body>
 </html>

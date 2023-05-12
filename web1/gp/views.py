@@ -10,16 +10,18 @@ import os
 from .test_suite_mang.test_suite_manger import run_test_suite
 #from my_module import genetic_algorithm
 from jpype import *
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 
 def index(request):
     return render(request, 'gp/index.html')
+def chat2(request):
+    return render(request, 'gp/chat2.html')
 def logino(request):
-    return render(request, 'users/LogIn.html')
+    return render(request, 'gp/Login.html')
 def siginup(request):
-    return render(request, 'users/register.html')
+    return render(request, 'gp/register.html')
 def lm(request):
     return render(request, 'gp/learnMore.html')
 def userpage(request):
@@ -137,12 +139,14 @@ def upload(request):
 def run_java_program(request):
     # Path to the Java program
     java_program = "D:\\Grad2.0\\finalfinal\\out\\production\\finalfinal\\"
-
+    classpath = " D:\\Grad2.0\\finalfinal\\out\\production\\finalfinal;D:\\z3-4.12.1-x64-win\\bin\\com.microsoft.z3.jar;C:\\Users\\Ahmad\\OneDrive\\Desktop\\javaparser-core-3.24.10.jar "
+    command = '-Djava.library.path=D:\\z3-4.12.1-x64-win\\bin "-javaagent:C:\\Users\\Ahmad\\AppData\\Local\\JetBrains\\IntelliJ IDEA Community Edition 2022.2.2\\lib\\idea_rt.jar=65115:C:\\Users\\Ahmad\\AppData\\Local\\JetBrains\\IntelliJ IDEA Community Edition 2022.2.2\\bin" -Dfile.encoding=UTF-8 -classpath D:\\Grad2.0\\finalfinal\\out\\production\\finalfinal;D:\\z3-4.12.1-x64-win\\bin\\com.microsoft.z3.jar;C:\\Users\\Ahmad\\OneDrive\\Desktop\\javaparser-core-3.24.10.jar FunctionExtractor'
+    command2='c: && cd c:\\Users\\Ahmad\\OneDrive\\Documents\\GitHub\\AutoTest\\web1\\z3 && cmd /C "java @C:\\Users\\Ahmad\\AppData\\Local\\Temp\\cp_evnzpem5pvtxwbnmr049bfomt.argfile FunctionExtractor "'
     # Arguments to be passed to the Java program
     arguments = "arg1"
 
     # Call the Java program using subprocess
-    result = subprocess.run(["java", "FunctionExtractor",java_program,arguments] , stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    result = subprocess.call( command2 , stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     # Check if the Java program executed successfully
     if result.returncode == 0:
