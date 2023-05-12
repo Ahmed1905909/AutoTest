@@ -8,8 +8,9 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import HttpResponseRedirect
 from .forms import CustomUserCreationForm
+from .models import YourTable
 
-# def register(request):
+# def register(request): 
 #     if request.method == 'POST':
 #         form = CreateUserForm(request.POST)
 #         if form.is_valid(): 
@@ -42,6 +43,8 @@ from .forms import CustomUserCreationForm
 
 
 
+
+
 def signup(request):
     if request.user.is_authenticated:
         return redirect('signin')
@@ -53,6 +56,12 @@ def signup(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
+            
+            # Save input and output to the database
+            input_text = request.POST['input_text']
+            output_text = request.POST['output_text']
+            YourTable.objects.create(input_text=input_text, output_text=output_text)
+
             messages.success(request, f'Account created for {username}!')
             return redirect('index')
         else:
@@ -61,6 +70,7 @@ def signup(request):
     else:
         form = CustomUserCreationForm()
         return render(request, 'users/signup.html', {'form': form})
+
     
 
 def signin(request):
