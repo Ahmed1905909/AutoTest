@@ -13,7 +13,11 @@
         <div class="content" >
         <img src="{% static '/images/homep.png' %}" />
             <div>
-                <button type="button"><span></span>START TESTING</button>
+                <a href="{% url 'userpage' %}">
+                    <button type="button">
+                      <span></span>START TESTING
+                    </button>
+                  </a>
                 <a href="{% url 'lm' %}">
                   <button type="button">
                     <span></span>LEARN MORE

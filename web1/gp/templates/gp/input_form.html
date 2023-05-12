@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Java View Example</title>
+</head>
+<body>
+	<h1>Enter Input</h1>
+	<form method="post">
+		{% csrf_token %}
+		<input type="text" name="input_value">
+		<button type="submit">Run Java Code</button>
+	</form>
+</body>
+</html>

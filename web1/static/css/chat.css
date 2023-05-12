@@ -1,71 +1,87 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  .about-us1{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    max-width: 730px;
-    width: 100%;
-    padding: 90px 0;
-    background: #ddd;
-    border-radius: 7px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.input-container {
+  flex-basis: 45%;
+  font-weight: normal;
+
+}
+
+.input-container h2{
+  flex-basis: 45%;
+  font-weight: normal;
+
+}
+
+.output-container {
+  flex-basis: 45%;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+textarea {
+  height: 400px;
+  width: 100%;
+  resize: none;
+  overflow-y: scroll;
+  border-radius: 10px;
+  border: 2px solid #c5c3c3;
+  font-size: 16px;
+  line-height: 1.5em;
   
-  
-  .pic{
-    height: 80%;
-    width:  10%;
-  }
-  .about{
-    width: 1130px;
-    max-width: 85%;
-    left: 50%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  .text{
-    width: 540px;
-  }
-  .text h2{
-    font-size: 90px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .text h5{
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 20px;
-  }
-  span{
-    color: #4070f4;
-  }
-  .text p{
-    font-size: 18px;
-    line-height: 25px;
-    letter-spacing: 1px;
-  }
-  .data{
-    margin-top: 30px;
-  }
-  .hire{
-    font-size: 18px;
-    background: #009579;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    padding: 8px 25px;
-    border-radius: 6px;
-    transition: 0.5s;
-  }
-  .hire:hover{
-    background: #000;
-    border: 1px solid #4070f4;
-  }
+}
+
+button[type=submit] {
+  font-size: 18px;
+  background: #009579;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  padding: 8px 45px;
+  border-radius: 6px;
+  transition: 0.5s;
+  align-items: center;
+}
+
+button[type=submit]:hover {
+  background-color: #c5c3c3;
+}
+.h2{
+  font-weight: normal;
+}
+
+.output-container {
+  padding: 20px;
+}
+
+.output-container h2 {
+  margin-top: 0;
+  font-weight: normal;
+
+}
+
+.output-container pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+#function_input {
+  height: 400px;
+  width: 100%;
+  resize: none;
+  overflow-y: scroll;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.5em;
+}

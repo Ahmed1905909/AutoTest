@@ -1,0 +1,66 @@
+.compiler-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #292d36;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.compiler-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #1e2229;
+}
+
+.compiler-header .title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.run-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.run-button:hover {
+    background-color: #3e8e41;
+}
+
+.compiler-body {
+    display: flex;
+    height: 100%;
+}
+
+.line-numbers {
+    display: inline-block;
+    width: 40px;
+    padding: 10px;
+    background-color: #1e2229;
+    font-size: 14px;
+    color: #808080;
+    text-align: right;
+    user-select: none;
+    overflow-y: auto;
+}
+
+.code-input {
+    flex: 1;
+    padding: 10px;
+    background-color: #292d36;
+    border: none;
+    outline: none;
+    color: #fff;
+    caret-color: #4CAF50;
+}
+
+.line-highlight {
+    background-color: #1e2229;
+}

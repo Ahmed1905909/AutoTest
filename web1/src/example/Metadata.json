@@ -1,0 +1,21 @@
+{
+    "file": "class_test",
+    "location": "example/",
+    "class": "TempCalc",
+    "constructor": {
+        "parameters": [
+            { "type": "integer", "min": -40 ,"max": 140 },
+            { "type": "integer", "min": -40 ,"max": 60 }
+             ] },
+    "actions": [
+        { "name": "fahrenheit", "type": "assign", "parameters": [
+            { "type": "integer", "min": -40 ,"max": 140 }]
+        },
+        { "name": "celsius", "type": "assign", "parameters": [
+            { "type": "integer", "min": -40 ,"max": 60 } ]
+        },
+        { "name": "fahrenheit_value", "type": "method" },
+        { "name": "celsius_value", "type": "method" }
+    ]
+
+}

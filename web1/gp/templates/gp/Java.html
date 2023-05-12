@@ -1,0 +1,6 @@
+<form method="post" action="{% url 'run_java_program' %}">
+  {% csrf_token %}
+  <label for="argument">Argument:</label>
+  <input type="text" id="argument" name="argument">
+  <button type="submit">Run Program</button>
+</form>

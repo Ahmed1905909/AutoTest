@@ -7,12 +7,17 @@
 	<div class="navbar">
 	<ul>
         <li><a href="{% url 'index' %}">Home</a></li>
-        <li><a href="{% url 'register' %}">Create Account</a></li>
-        <li><a href="{% url 'login' %}">Login</a></li>
+	{% if user.is_authenticated %}
+     <li> <a href="{% url 'signout' %}" class="btn btn-danger">Logout</a></li>
+	 <li> <a href="{% url 'profile' %}" class="btn btn-danger">profile</a></li>
+    {% else %}
+	<li><a href="{% url 'signup' %}">Signup</a></li> 
+	<li><a href="{% url 'login' %}"> Login</a></li>
+    {% endif %}
       </ul>
 </div>
 </div>
-
+	
 	{% block head %}
 	{% endblock %}
 
@@ -20,4 +25,3 @@
 	{% endblock %}
 </body>
 </html>
-
