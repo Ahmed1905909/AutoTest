@@ -1,3 +1,5 @@
+import json
+import os
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import JsonResponse
@@ -77,63 +79,63 @@ def java_view(request):
 
 
 
-def call_java_method(request):
-    print("HI")
-    jpype.startJVM()
-    classpath = "D:\\Grad2.0\\finalfinal"
+# def call_java_method(request):
+#     print("HI")
+#     jpype.startJVM()
+#     classpath = "D:\\Grad2.0\\finalfinal"
 
-    jpype.addClassPath(classpath)
-    print(jpype.getClassPath())
-    print("HI3")
+#     jpype.addClassPath(classpath)
+#     print(jpype.getClassPath())
+#     print("HI3")
 
-    class_loader = jpype.JClass('java.lang.Thread').currentThread().getContextClassLoader()
+#     class_loader = jpype.JClass('java.lang.Thread').currentThread().getContextClassLoader()
 
-    # Load the class using the classloader
-    my_class = class_loader.loadClass("src\\FunctionExtractor.java")
-    print("HI9")
+#     # Load the class using the classloader
+#     my_class = class_loader.loadClass("src\\FunctionExtractor.java")
+#     print("HI9")
 
-    # Create an instance of the class
-    my_instance = my_class()
+#     # Create an instance of the class
+#     my_instance = my_class()
 
-    # Call a method on the instance
-    my_instance.my_method()
-    print(my_class)
-    print("HI2")
-    # Shutdown the JVM
-    jpype.shutdownJVM()
-    # create a Pype interface for the Java class that contains the method you want to call
-    # java_class = jpype.JClass("FunctionExtractor.java")
-
-
-    # # create an instance of the Java class
-    # java_instance = java_class()
-    # print(result)
-    # # call the method on the Java class instance
-    # result = java_instance.Main()
-    # print(java_instance)
-    # return the result as an HTTP response
-    return render(request, 'gp/output.html')
-    #return HttpResponse(result)
+#     # Call a method on the instance
+#     my_instance.my_method()
+#     print(my_class)
+#     print("HI2")
+#     # Shutdown the JVM
+#     jpype.shutdownJVM()
+#     # create a Pype interface for the Java class that contains the method you want to call
+#     # java_class = jpype.JClass("FunctionExtractor.java")
 
 
+#     # # create an instance of the Java class
+#     # java_instance = java_class()
+#     # print(result)
+#     # # call the method on the Java class instance
+#     # result = java_instance.Main()
+#     # print(java_instance)
+#     # return the result as an HTTP response
+#     return render(request, 'gp/output.html')
+#     #return HttpResponse(result)
 
 
-def upload(request):
-    if request.method == 'POST':
-        name = request.POST['name']
-        Jason = request.POST['Json']
-        file2 = request.FILES['file2']
-        file_path = os.path.join(os.getcwd(), 'uploads', file2.name)
-        with open(file_path, 'wb') as destination_file:
-            for chunk in file2.chunks():
-                destination_file.write(chunk)
-        # TODO: Optionally do some processing on the file contents here
 
-        result = run_test_suite(name, json.loads(Jason) , None)
 
-        return render(request, 'gp/'+result)
+# #def upload(request):
+#     if request.method == 'POST':
+#         name = request.POST['name']
+#         Jason = request.POST['Json']
+#         file2 = request.FILES['file2']
+#         file_path = os.path.join(os.getcwd(), 'uploads', file2.name)
+#         with open(file_path, 'wb') as destination_file:
+#             for chunk in file2.chunks():
+#                 destination_file.write(chunk)
+#         # TODO: Optionally do some processing on the file contents here
 
-    return render(request, 'gp/genetic.html')
+#         result = run_test_suite(name, json.loads(Jason) , None)
+
+#         return render(request, 'gp/'+result)
+
+#     return render(request, 'gp/genetic.html')
 
 
 def run_java_program(request):
